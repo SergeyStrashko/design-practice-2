@@ -1,0 +1,4 @@
+archive_bin {
+ name: "my-archive",
+ src: "bood"
+}

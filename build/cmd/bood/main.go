@@ -2,15 +2,14 @@ package main
 
 import (
 	"flag"
-	"github.com/google/blueprint"
-	"github.com/roman-mazur/bood"
-	"github.com/roman-mazur/bood/gomodule"
-	// TODO: Підставте свій власний пакет.
-	// "github.com/roman-mazur/design-practice-2-template/build/gomodule"
 	"io/ioutil"
 	"log"
 	"os"
 	"os/exec"
+	"github.com/SergeyStrashko/design-practice-2/build/archive_bin"
+	gomodule "github.com/SergeyStrashko/design-practice-2/build/gomodule"
+	"github.com/google/blueprint"
+	"github.com/roman-mazur/bood"
 )
 
 var (
@@ -20,7 +19,7 @@ var (
 
 func NewContext() *blueprint.Context {
 	ctx := bood.PrepareContext()
-	// TODO: Замініть імплементацію go_binary на власну.
+	ctx.RegisterModuleType("archive_bin", archive_bin.SimpleZipFactory)
 	ctx.RegisterModuleType("go_binary", gomodule.SimpleBinFactory)
 	return ctx
 }

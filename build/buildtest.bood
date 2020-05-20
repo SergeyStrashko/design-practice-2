@@ -1,9 +1,12 @@
 go_binary {
   // Module (and output) name.
-  name: "bood",
+  name: "test",
 
   // Go package to build.
   pkg: "github.com/SergeyStrashko/design-practice-2/build/cmd/bood",
+
+  // Go package(s) to test.
+  testPkg: "github.com/SergeyStrashko/design-practice-2/build/cmd/bood/...",
 
   // Build inputs.
   srcs: ["**/*.go", "../go.mod"]
